@@ -77,14 +77,12 @@ public class CarrinhoTest {
 	}
 	
 	@Test
-	public void testValorCarrinhoVazio() throws ProdutoNaoEncontradoException {
+	public void testValorCarrinhoVazio() {
 		carrinho.addItem(televisao);
         carrinho.addItem(chromecast);
         carrinho.addItem(firestick);
         assertEquals(3597, carrinho.getValorTotal());
-        carrinho.removeItem(televisao);
-        carrinho.removeItem(chromecast);
-        carrinho.removeItem(firestick);
+        carrinho.esvazia();
 		assertTrue(carrinho.getValorTotal() == 0.0);
 	}
 
